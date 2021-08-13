@@ -1,7 +1,5 @@
 @echo off
 
-rem call <venv>
-
 if [%1] == [] goto help
 
 setlocal ENABLEDELAYEDEXPANSION
