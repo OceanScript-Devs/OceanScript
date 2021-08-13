@@ -36,8 +36,8 @@ They **all** subclass ``oceanscript.errors.AlphaError``.
 The encoder can raise the ``UnsupportedCharacterError`` exception, when an unsupported character
 is passed to the encoder. Only ascii letters and spaces are supported.
 
-The decoder can raise ``ForbiddenSectorError``, and ``ParserError``. 
-* The ``ForbiddenSectorError`` is for when the forbidden 27th character is provided to the decoder (``_>...``). 
+The decoder can raise ``ForbiddenSectorError``, and ``ParserError``.
+* The ``ForbiddenSectorError`` is for when the forbidden 27th character is provided to the decoder (``_>...``).
 * The ``ParserError`` is for when the decoder failed to parse a string.
 
 This project is still in partial development. Use for fun, and provide feedback!
