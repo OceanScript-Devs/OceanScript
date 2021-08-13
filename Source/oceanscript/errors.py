@@ -4,7 +4,7 @@ class OceanScriptError(Exception):
     pass
 
 
-class ForbiddenSectorError(OceanScriptError):
+class ForbiddenSquareError(OceanScriptError):
     """Raised when the forbidden 27th box is used."""
 
     def __init__(self):
