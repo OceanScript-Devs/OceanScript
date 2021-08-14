@@ -1,7 +1,8 @@
 import re
+import string
 
 from .maps import decoding_map
-from .test_exceptions import ForbiddenSquareError, ParserError
+from .test_exceptions import ForbiddenSquareError, ParserError, PunctuationBlockError
 
 
 def decode(i):
@@ -26,9 +27,14 @@ def decode(i):
         try:
             ret += decoding_map[x]
         except KeyError:
-            if re.match(r"\[.+\]", x):
-                ret += re.sub(r"\[(.+)\]", r"\1", x)
-                continue
+            if (search := re.search((expr := r"\[(.+)\]"), x)) :
+                if (match := search.groups[0]) not in string.punctuation:
+                    exc = PunctuationBlockError(
+                        f"Character '{match}' cannot be used in punctuation block"
+                    )
+                else:
+                    ret += re.sub(expr, r"\1", x)
+                    continue
             if x == "_>...":
                 exc = ForbiddenSquareError()
             else:

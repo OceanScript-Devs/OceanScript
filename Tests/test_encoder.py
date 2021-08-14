@@ -3,6 +3,7 @@ import string
 
 from .maps import encoding_map as emap
 
+
 def encode(content: str):
     content = content.lower()
 

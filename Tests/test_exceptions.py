@@ -18,3 +18,7 @@ class UnsupportedCharacterError(OceanScriptError):
     def __init__(self, char):
         self.char = char
         super().__init__("Character %s is not supported" % char)
+
+
+class PunctuationBlockError(OceanScriptError):
+    pass
