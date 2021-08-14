@@ -1,4 +1,10 @@
-# OceanScript Esoteric Language
+<h1 align="center">
+  <br>
+  <a href="https://github.com/Kreusada/OceanScript"><img src="https://raw.githubusercontent.com/Kreusada/OceanScript/main/Resources/oceanscript.png" alt="OceanScript Esoteric Language"></a>
+  <br>
+  OceanScript Esoteric Language
+  <br>
+</h1>
 
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://user-images.githubusercontent.com/6032823/111363465-600fe880-8690-11eb-8377-ec1d4d5ff981.png)](https://github.com/PyCQA/isort)
