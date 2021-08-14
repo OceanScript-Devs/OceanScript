@@ -115,7 +115,7 @@ def decode(content: str):
         try:
             ret += _maps["decoding_map"][x]
         except KeyError:
-            if x == ForbiddenSquareError.char:
+            if x == "_>...":
                 exc = ForbiddenSquareError()
             else:
                 exc = ParserError(x)
