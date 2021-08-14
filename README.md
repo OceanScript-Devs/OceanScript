@@ -15,6 +15,9 @@ It's purpose is simple - for fun. This "esolang" shouldn't be used for anything 
 of fun, but also can be used for mind games, as it takes infuriatingly long just to write a single
 sentence.
 
+Oceanscript was given it's name due to the fact that the script looks like waves in the ocean when it is written.
+See the image above, for example.
+
 It's sheer complexity means that nothing is supported aside from ascii characters. Punctuation is unsupported.
 Capitalization is ignored. You'll see why further down this page.
 
