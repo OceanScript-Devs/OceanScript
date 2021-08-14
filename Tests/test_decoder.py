@@ -27,14 +27,18 @@ def decode(i):
         try:
             ret += decoding_map[x]
         except KeyError:
-            if (search := re.search((expr := r"\[(.+)\]"), x)) :
-                if (match := search.groups[0]) not in string.punctuation:
-                    exc = PunctuationBlockError(
-                        f"Character '{match}' cannot be used in punctuation block"
-                    )
-                else:
-                    ret += re.sub(expr, r"\1", x)
-                    continue
+            if (search := re.search((expr := r"\[(.+)\]"), x)):
+                for s in search.groups()[0]:
+                    if s in "[]":
+                        raise PunctuationBlockError(
+                            "Do not use square brackets inside punctuation blocks"
+                        ) from None
+                    if s not in string.punctuation:
+                        raise PunctuationBlockError(
+                            f"Character '{s}' cannot be used in punctuation block"
+                        ) from None
+                ret += re.sub(expr, r"\1", x)
+                continue
             if x == "_>...":
                 exc = ForbiddenSquareError()
             else:
