@@ -13,19 +13,26 @@ def decode(i):
     #  we need to enforce literal `\n` to avoid
     #  them from disappearing when splitting
     #  the string.
-    builder = ""
-    for group in re.split(r"(\\n)|([\^~_])([>\-<])(\.{1,3})", i):
-        if not group:
-            builder += " "
+    formation = ""
+    for x in re.split(r"(\\n)|(\[.+\])|([\^~_])([>\-<])(\.{1,3})", i):
+        if not x:
+            formation += " "
         else:
-            builder += group
-    message = ""
-    for x in builder.split():
-        try:
-            message += decoding_map[x]
-        except KeyError:
-            if x == ForbiddenSquareError.char:
-                raise ForbiddenSquareError() from None
-            raise ParserError(x)
+            formation += x
 
-    return message
+    ret = ""
+
+    for x in formation.split():
+        try:
+            ret += decoding_map[x]
+        except KeyError:
+            if re.match(r"\[.+\]", x):
+                ret += re.sub(r"\[(.+)\]", r"\1", x)
+                continue
+            if x == "_>...":
+                exc = ForbiddenSquareError()
+            else:
+                exc = ParserError(x)
+            raise exc from None
+
+    return ret
