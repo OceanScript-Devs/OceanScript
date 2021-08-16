@@ -1,5 +1,5 @@
 """
-Alpha - An extensive esolang built with a python interpreter.
+OceanScript - An extensive esolang built with a python interpreter.
 """
 import re as _re
 import string as _string
