@@ -6,7 +6,7 @@ import string as _string
 
 from .errors import *
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 _maps = {
     "encoding_map": {
@@ -103,7 +103,7 @@ def encode(content: str):
     """
     content = content.lower()
     for character in content:
-        if not character in _string.ascii_letters + " ":
+        if not character in _string.ascii_letters + _string.digits + " ":
             raise UnsupportedCharacterError(character)
 
     translator = content.maketrans(_maps["encoding_map"])
