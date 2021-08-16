@@ -2,7 +2,9 @@ class OceanScriptError(Exception):
     pass
 
 
-class ForbiddenSquareError(OceanScriptError):
+class _ForbiddenSquareError(OceanScriptError):
+    """deprecated"""
+
     def __init__(self):
         self.char = "_>..."
         super().__init__("Using _>... is forbidden")

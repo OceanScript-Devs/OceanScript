@@ -2,7 +2,7 @@ import re
 import string
 
 from .maps import decoding_map
-from .test_exceptions import ForbiddenSquareError, ParserError, PunctuationBlockError
+from .test_exceptions import ParserError
 
 
 def decode(i):
@@ -15,7 +15,7 @@ def decode(i):
     #  them from disappearing when splitting
     #  the string.
     formation = ""
-    for x in re.split(r"(\\n)|(\[.+\])|([\^~_])([>\-<])(\.{1,3})", i):
+    for x in re.split(r"(\\n)|(\[.+\])|([\^~_])([>\-<])(\.{1,4})", i):
         if not x:
             formation += " "
         else:
@@ -27,22 +27,6 @@ def decode(i):
         try:
             ret += decoding_map[x]
         except KeyError:
-            if (search := re.search((expr := r"\[(.+)\]"), x)):
-                for s in search.groups()[0]:
-                    if s in "[]":
-                        raise PunctuationBlockError(
-                            "Do not use square brackets inside punctuation blocks"
-                        ) from None
-                    if s not in string.punctuation:
-                        raise PunctuationBlockError(
-                            f"Character '{s}' cannot be used in punctuation block"
-                        ) from None
-                ret += re.sub(expr, r"\1", x)
-                continue
-            if x == "_>...":
-                exc = ForbiddenSquareError()
-            else:
-                exc = ParserError(x)
-            raise exc from None
+            raise ParserError() from None
 
     return ret

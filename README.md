@@ -18,7 +18,7 @@ sentence.
 Oceanscript was given it's name due to the fact that the script looks like waves in the ocean when it is written.
 See the image above, for example.
 
-It's sheer complexity means that nothing is supported aside from ascii characters. Punctuation is unsupported.
+It's sheer complexity means that nothing is supported aside from alphanumeric characters. Punctuation is unsupported.
 Capitalization is ignored. You'll see why further down this page.
 
 Oceanscript uses a range of three to five characters PER letter, with each letter joined together, and each *word* joined
@@ -36,7 +36,7 @@ to understand when we learn how the letter structure works.
 
 ### Building letters
 
-Visualize **3** boxes. Each box has **9** squares inside, with **3** columns, and **3** rows.
+Visualize **4** boxes. Each box has **9** squares inside, with **3** columns, and **3** rows.
 So basically, three 3x3 boxes. This is what we need to start building our letters.
 
 ```alp
@@ -53,15 +53,16 @@ So basically, three 3x3 boxes. This is what we need to start building our letter
 # Box 3
 [S] [T] [U]
 [V] [W] [X]
-[Y] [Z] [/]
+[Y] [Z] [0]
+
+# Box 4
+[1] [2] [3]
+[4] [5] [6]
+[7] [8] [9]
 ```
 
-Each letter has its own square in this configuration. However, each column and row in this configuration
-are joined together. For example, this means that A, D, G, J, M, P, S, V and Y are all in column 1. There
-are only three columns, three rows, and three boxes. Just remember the number three, okay? :P
-
-The final square is spare, which is and remains unused. If you happen to be using the python interpreter, an error
-will be raised if you try to formulate an oceanscript character for the final square.
+Each letter and number has its own square in this configuration. However, each column and row in this configuration
+are joined together. For example, this means that A, D, G, J, M, P, S, V, Y, 1, 4 and 7 are all in column 1.
 
 We need to first take a look at our **markers**. These are essentially pointers towards where our letter is in
 this configuration. The following characters are known as markers: which make up oceanscript as a whole.
@@ -79,6 +80,7 @@ this configuration. The following characters are known as markers: which make up
 * ``.``: Denotes box **1**
 * ``..``: Denotes box **2**
 * ``...``: Denotes box **3**
+* ``....``: Denotes box **4**
 
 We use the markers in the following order: ``row -> column -> box``. Let's start of with an example, with letter A.
 We will zoom in on A's box, so it's slighty easier for us:
@@ -135,14 +137,12 @@ Note that capitalization is ignored for both functions. Oceanscript doesn't and 
 capitalization, numeracy, or punctuation - as that's not what it was designed for.
 
 These functions may raise exceptions which you can access in the ``oceanscript.errors`` module.
-They **all** subclass ``oceanscript.errors.AlphaError``.
+They **all** subclass ``oceanscript.errors.OceanScriptError``.
 
 The encoder can raise the ``UnsupportedCharacterError`` exception, when an unsupported character
 is passed to the encoder. Only ascii letters and spaces are supported.
 
-The decoder can raise ``ForbiddenSectorError``, and ``ParserError``.
-* The ``ForbiddenSectorError`` is for when the forbidden 27th character is provided to the decoder (``_>...``).
-* The ``ParserError`` is for when the decoder failed to parse a string.
+The decoder can also raise ``ParserError``, which is for when the decoder failed to parse a string.
 
 This project is still in partial development. Use for fun, and provide feedback!
 
