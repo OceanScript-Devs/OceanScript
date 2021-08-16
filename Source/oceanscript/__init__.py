@@ -4,9 +4,9 @@ Alpha - An extensive esolang built with a python interpreter.
 import re as _re
 import string as _string
 
-from .errors import ParserError, UnsupportedCharacterError
+from .errors import *
 
-__version__ = "0.1.0"
+__version__ = "1.0.1"
 
 _maps = {
     "encoding_map": {
@@ -37,15 +37,15 @@ _maps = {
         "x": "~>...",
         "y": "_<...",
         "z": "_-...",
-        "^<....": "1",
-        "^-....": "2",
-        "^>....": "3",
-        "~<....": "4",
-        "~-....": "5",
-        "~>....": "6",
-        "_<....": "7",
-        "_-....": "8",
-        "_>....": "9",
+        "1": "^<....",
+        "2": "^-....",
+        "3": "^>....",
+        "4": "~<....",
+        "5": "~-....",
+        "6": "~>....",
+        "7": "_<....",
+        "8": "_-....",
+        "9": "_>....",
     },
     "decoding_map": {
         "\\n": " ",
