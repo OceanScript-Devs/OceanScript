@@ -1,5 +1,5 @@
 ```
-The translation in the `natoalpha.o` file equates to the list of names in the NATO alphabet.
+The translation in the `natoalpha.ocs` file equates to the list of names in the NATO alphabet.
 
 Alpha
 Bravo
