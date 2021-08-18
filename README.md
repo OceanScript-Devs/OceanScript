@@ -134,7 +134,7 @@ oceanscript.decode('_-.~-.^>..^>..~>..')
 ```
 
 Note that capitalization is ignored for both functions. Oceanscript doesn't and won't support
-capitalization, numeracy, or punctuation - as that's not what it was designed for.
+capitalization or punctuation - as that's not what it was designed for.
 
 These functions may raise exceptions which you can access in the ``oceanscript.errors`` module.
 They **all** subclass ``oceanscript.errors.OceanScriptError``.
