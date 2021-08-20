@@ -1,5 +1,5 @@
 @echo off
-call %userprofile%\redenv\Scripts\activate.bat
+
 if [%1] == [] goto help
 
 setlocal ENABLEDELAYEDEXPANSION
