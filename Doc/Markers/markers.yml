@@ -1,0 +1,149 @@
+markers:
+  '^':
+    indication: top_row
+    qualname: carot
+    coverage:
+    - 'a'
+    - 'b'
+    - 'c'
+    - 'j'
+    - 'k'
+    - 'l'
+    - 's'
+    - 't'
+    - 'u'
+    - '1'
+    - '2'
+    - '3'
+  '~':
+    indication: middle_row
+    qualname: tilde
+    coverage:
+    - 'd'
+    - 'e'
+    - 'f'
+    - 'm'
+    - 'n'
+    - 'o'
+    - 'v'
+    - 'w'
+    - 'x'
+    - '4'
+    - '5'
+    - '6'
+  '_':
+    indication: bottom_row
+    qualname: underscore
+    coverage:
+    - 'g'
+    - 'h'
+    - 'i'
+    - 'p'
+    - 'q'
+    - 'r'
+    - 'y'
+    - 'z'
+    - '0'
+    - '7'
+    - '8'
+    - '9'
+  '<':
+    indication: left_column
+    qualname: less_than
+    coverage:
+    - 'a'
+    - 'd'
+    - 'g'
+    - 'j'
+    - 'm'
+    - 'p'
+    - 's'
+    - 'v'
+    - 'y'
+    - '1'
+    - '4'
+    - '7'
+  '-':
+    indication: middle_column
+    qualname: hyphen
+    coverage:
+    - 'b'
+    - 'e'
+    - 'h'
+    - 'k'
+    - 'n'
+    - 'q'
+    - 't'
+    - 'w'
+    - 'z'
+    - '2'
+    - '5'
+    - '8'
+  '>':
+    indication: right_column
+    qualname: greater_than
+    coverage:
+    - 'c'
+    - 'f'
+    - 'i'
+    - 'l'
+    - 'o'
+    - 'r'
+    - 'u'
+    - 'x'
+    - '0'
+    - '3'
+    - '6'
+    - '9'
+  '.':
+    indication: box_1
+    qualname: one_dot
+    coverage:
+    - 'a'
+    - 'b'
+    - 'c'
+    - 'd'
+    - 'e'
+    - 'f'
+    - 'g'
+    - 'h'
+    - 'i'
+  '..':
+    indication: box_2
+    qualname: two_dots
+    coverage:
+    - 'j'
+    - 'k'
+    - 'l'
+    - 'm'
+    - 'n'
+    - 'o'
+    - 'p'
+    - 'q'
+    - 'r'
+  '...':
+    indication: box_3
+    qualname: three_dots
+    coverage:
+    - 's'
+    - 't'
+    - 'u'
+    - 'v'
+    - 'w'
+    - 'x'
+    - 'y'
+    - 'z'
+    - '0'
+  '....':
+    indication: box_4
+    qualname: four_dots
+    coverage:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+    - '7'
+    - '8'
+    - '9'
