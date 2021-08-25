@@ -16,5 +16,5 @@ multiplied by the number on the outer right column of the character.
 If we were trying to write 'S', we'd look to the right first (``^``), then above (``<``) and then finally
 add the number of dots equivalent to the number on the right (``...``). 'S' would therefore be ``^>...``.
 
-Note: The other files in this directory were only written with the kotlin extension because it makes the characters 
+Note: The other files in this directory were only written with the gradle extension because it makes the characters
 easier to read with the highlighted syntax.
