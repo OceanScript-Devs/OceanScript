@@ -21,7 +21,7 @@ See the image above, for example.
 It's sheer complexity means that nothing is supported aside from alphanumeric characters. Punctuation is unsupported.
 Capitalization is ignored. You'll see why further down this page.
 
-Oceanscript uses a range of three to five characters PER letter, with each letter joined together, and each *word* joined
+Oceanscript uses a range of three to six characters PER letter, with each letter joined together, and each *word* joined
 together by a line break. A single word can take up quite a few spaces on each line of a document or notepad.
 
 Let's start of with a basic example - to see what I'm really talking about:
@@ -37,7 +37,7 @@ to understand when we learn how the letter structure works.
 ### Building letters
 
 Visualize **4** boxes. Each box has **9** squares inside, with **3** columns, and **3** rows.
-So basically, three 3x3 boxes. This is what we need to start building our letters.
+So basically, four 3x3 boxes. This is what we need to start building our letters.
 
 ```alp
 # Box 1
