@@ -1,5 +1,4 @@
 import argparse
-import sys
 
 import oceanscript
 from oceanscript.errors import OceanScriptError, ParserError
