@@ -5,6 +5,13 @@ import oceanscript
 from oceanscript.errors import OceanScriptError, ParserError
 
 
+def format_exception(exc):
+    ret = f"{exc.__class__.__name__}: {exc}"
+    if isinstance(exc, ParserError):
+        ret += " Try wrapping your decode argument with quotation marks."
+    return ret
+
+
 def main():
     parser = argparse.ArgumentParser(description="OceanScript encoder/decoder.", add_help=False)
     parser.add_argument("--encode", help="Encode a string into oceanscript", type=str, nargs="*")
@@ -33,11 +40,24 @@ def main():
                 title += "\n"
             else:
                 title += " "
-            message += title + oceanscript.encode(" ".join(args.encode))
+
+            try:
+                encoded = oceanscript.encode(" ".join(args.encode))
+            except OceanScriptError as exc:
+                print(format_exception(exc))
+                return
+            else:
+                message += title + encoded
 
         if args.decode:
             start = "\n" if message else ""
-            message += start + "Decoded oceanscript: " + oceanscript.decode("".join(args.decode))
+            try:
+                decoded = oceanscript.decode("".join(args.decode))
+            except OceanScriptError as exc:
+                print(format_exception(exc))
+                return
+            else:
+                message += start + "Decoded oceanscript: " + decoded
 
         print(message)
 
@@ -45,10 +65,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except OceanScriptError as exc:
-        message = f"{exc.__class__.__name__}: {exc}"
-        if isinstance(exc, ParserError):
-            message += " Try wrapping your decode argument with quotation marks."
-        print(message)
+    main()
