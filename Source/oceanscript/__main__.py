@@ -47,8 +47,6 @@ def main():
 if __name__ == "__main__":
     try:
         main()
-    except KeyboardInterrupt:
-        print("Exiting.")
     except OceanScriptError as exc:
         message = f"{exc.__class__.__name__}: {exc}"
         if isinstance(exc, ParserError):
