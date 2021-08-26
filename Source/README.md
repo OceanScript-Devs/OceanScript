@@ -19,14 +19,14 @@ Start by importing the module.
 import oceanscript
 ```
 
-Use the **encoder** method to convert normal text into oceanscript.
+Use the **encode** function to convert normal text into oceanscript.
 
 ```py
 oceanscript.encode('hello')
 >>> '_-.~-.^>..^>..~>..'
 ```
 
-Use the **decoder** method to convert oceanscript back into normal text.
+Use the **decode** function to convert oceanscript back into normal text.
 
 ```py
 oceanscript.decode('_-.~-.^>..^>..~>..')

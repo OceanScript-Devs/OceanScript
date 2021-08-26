@@ -119,14 +119,14 @@ Start by importing the module.
 import oceanscript
 ```
 
-Use the **encoder** method to convert normal text into oceanscript.
+Use the **encode** function to convert normal text into oceanscript.
 
 ```py
 oceanscript.encode('hello')
 >>> '_-.~-.^>..^>..~>..'
 ```
 
-Use the **decoder** method to convert oceanscript back into normal text.
+Use the **decode** function to convert oceanscript back into normal text.
 
 ```py
 oceanscript.decode('_-.~-.^>..^>..~>..')
@@ -145,6 +145,30 @@ is passed to the encoder. Only ascii letters and spaces are supported.
 The decoder can also raise ``ParserError``, which is for when the decoder failed to parse a string.
 
 This project is still in partial development. Use for fun, and provide feedback!
+
+## Command Line Interface
+
+As well as it's standard python implementation, OceanScript also has a command line interface 
+(built with argparse) which allows you to encode and decode oceanscript.
+
+Top level command name is ``oceanscript``.
+
+```sh
+$ oceanscript
+```
+
+Use the ``--encode`` and ``--decode`` arguments to convert oceanscript to and from.
+
+```sh
+$ oceanscript --encode testing
+>>> 'Encoded oceanscript: ^-...~-.^<...^-..._>.~-.._<.'
+
+$ oceanscript --decode "^-...~-.^<...^-..._>.~-.._<."
+>>> 'Decoded oceanscript: testing'
+```
+
+It's important that you wrap your decode arguments with quotation marks. Most noticeably, important
+oceanscript characters cannot be parsed due to the nature of command line interfaces.
 
 ## License
 
