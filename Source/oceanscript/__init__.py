@@ -47,9 +47,13 @@ _maps = {
         "7": "_<....",
         "8": "_-....",
         "9": "_>....",
-    }
+    },
+    "decoding_map": {},
 }
-_maps["decoding_map"] = {v: k for k, v in _maps["encoding_map"].items()}
+for k, v in _maps["encoding_map"].items():
+    if v == "\n":
+        v = "\\n"
+    _maps["decoding_map"][v] = k
 
 
 def encode(content: str):
