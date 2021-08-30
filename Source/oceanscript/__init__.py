@@ -6,7 +6,7 @@ import string as _string
 
 from .errors import *
 
-__version__ = "1.2.1"
+__version__ = "1.2.2"
 
 _maps = {
     "encoding_map": {
